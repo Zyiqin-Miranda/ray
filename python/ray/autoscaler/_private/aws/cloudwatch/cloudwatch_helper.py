@@ -142,7 +142,8 @@ class CloudwatchHelper:
             DocumentName=document_name,
             Parameters=parameters,
             MaxConcurrency=str(min(len(node_id), 1)),
-            MaxErrors="0")
+        )
+
         return response
 
     def _ssm_command_waiter(self,

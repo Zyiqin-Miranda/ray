@@ -14,7 +14,7 @@ provider:
         # We depend on AWS Systems Manager (SSM) to deploy CloudWatch configuration updates to your cluster,
         # with relevant configuration created or updated in the SSM Parameter Store during `ray up`.
 
-        # We support two CloudWatch related config type under this cloudwatch section: agent and dashboard.
+        # We support three CloudWatch related config type under this cloudwatch section: agent, dashboard and alarm.
         # The `AmazonCloudWatch-ray_{config_type}_config_{cluster_name}` SSM Parameter Store Config Key is used to
         # store a remote cache of the last Unified CloudWatch config applied.
 
