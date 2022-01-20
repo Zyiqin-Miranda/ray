@@ -12,10 +12,7 @@ EOF
 chmod +x /usr/bin/nproc
 
 NODE_VERSION="14"
-PYTHONS=("cp36-cp36m"
-         "cp37-cp37m"
-         "cp38-cp38"
-         "cp39-cp39")
+PYTHONS=("cp37-cp37m")
 
 NUMPY_VERSIONS=("1.14.5"
                 "1.14.5"
@@ -75,7 +72,7 @@ for ((i=0; i<${#PYTHONS[@]}; ++i)); do
   # The -d flag removes directories. The -x flag ignores the .gitignore file,
   # and the -e flag ensures that we don't remove the .whl directory, the
   # dashboard directory and jars directory.
-  git clean -f -f -x -d -e .whl -e python/ray/dashboard/client -e dashboard/client -e python/ray/jars
+#  git clean -f -f -x -d -e .whl -e python/ray/dashboard/client -e dashboard/client -e python/ray/jars
 
   pushd python
     # Fix the numpy version because this will be the oldest numpy version we can
@@ -112,4 +109,4 @@ for path in .whl/*.whl; do
 done
 
 # Clean the build output so later operations is on a clean directory.
-git clean -f -f -x -d -e .whl -e python/ray/dashboard/client
+#git clean -f -f -x -d -e .whl -e python/ray/dashboard/client
